@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+</head>
+<body>
+    <h1>Results for "{{.Query}}"</h1>
+    <a href="/">Back</a>
+    
+     <div id="results">
+        {{template "search_results.html" .}}
+    </div>
+</body>
+</html>

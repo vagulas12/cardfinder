@@ -1,0 +1,9 @@
+{{if .Cards}}
+    <ul>
+    {{range .Cards}}
+        <li>{{.Name}} ({{.ID}})</li>
+    {{end}}
+    </ul>
+{{else}}
+    <p>No cards found.</p>
+{{end}}
