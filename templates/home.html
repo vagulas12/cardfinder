@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Card Finder</title>
+    <title>Pokemon Card Finder</title>
+    <link rel="stylesheet" href="/static/style.css">
     <script src="https://unpkg.com/htmx.org@2.0.4"></script>
 </head>
 <body>
     <h1>Pokemon Card Finder</h1>
-    <form hx-get="/search" hx-target="#results" hx-swap="innerHTML">
-    <input type="text" name="q" placeholder="Card name..." required>
-    <button type="submit">Search</button>
-</form>
-
-<div id="results"></div>
+    <form hx-get="/search" hx-target="#results" hx-swap="innerHTML" hx-indicator="#loading">
+        <input type="text" name="q" placeholder="Search for a card..." required>
+        <button type="submit">Search</button>
+    </form>
+    <div id="loading" class="htmx-indicator">
+    <span class="spinner"></span>
+    Searching...
+    </div>
+    
+    <div id="results"></div>
 </body>
 </html>

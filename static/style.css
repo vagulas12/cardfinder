@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #1a1a2e;
+    color: #eee;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ffcb05;
+    text-shadow: 2px 2px 0 #2a75bb;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #2a75bb;
+    border-radius: 8px;
+    background: #16213e;
+    color: #eee;
+    width: 300px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #ffcb05;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #ffcb05;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #16213e;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card-info {
+    padding: 1rem;
+}
+
+.card-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.card-meta {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #aaa;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #ffcb05;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.htmx-indicator {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+    color: #ffcb05;
+    font-size: 1.2rem;
+}
+
+.htmx-request .htmx-indicator {
+    display: block;
+}
+
+.htmx-request.htmx-indicator {
+    display: block;
+}
+
+.spinner {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #16213e;
+    border-top-color: #ffcb05;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.card-detail {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #16213e;
+    border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .card-detail {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card-detail-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card-detail-info h2 {
+    color: #ffcb05;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.detail-meta {
+    color: #aaa;
+    margin-bottom: 1.5rem;
+}
+
+.detail-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #1a1a2e;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.detail-stats strong {
+    color: #ffcb05;
+}
+
+.detail-prices {
+    padding: 1rem;
+    background: #1a1a2e;
+    border-radius: 8px;
+}
+
+.detail-prices h3 {
+    color: #ffcb05;
+    margin-bottom: 0.75rem;
+}
+
+.detail-prices div {
+    margin-bottom: 0.5rem;
+}
+
+.external-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: #2a75bb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.external-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,36 @@
+<a href="javascript:history.back()" class="back-link">← Back</a>
+
+<div class="card-detail">
+    <div class="card-detail-image">
+        <img src="{{.Images.Large}}" alt="{{.Name}}">
+    </div>
+    
+    <div class="card-detail-info">
+        <h2>{{.Name}}</h2>
+        
+        <div class="detail-meta">
+            {{.Set.Name}} • #{{.Number}}
+        </div>
+        
+        <div class="detail-stats">
+            {{if .HP}}<div><strong>HP:</strong> {{.HP}}</div>{{end}}
+            {{if .Rarity}}<div><strong>Rarity:</strong> {{.Rarity}}</div>{{end}}
+            {{if .Types}}<div><strong>Type:</strong> {{range .Types}}{{.}} {{end}}</div>{{end}}
+            {{if .Subtypes}}<div><strong>Subtype:</strong> {{range .Subtypes}}{{.}} {{end}}</div>{{end}}
+            {{if .Artist}}<div><strong>Artist:</strong> {{.Artist}}</div>{{end}}
+        </div>
+        
+        {{if .Cardmarket.Prices.AverageSellPrice}}
+        <div class="detail-prices">
+            <h3>Cardmarket Prices</h3>
+            <div><strong>Average:</strong> €{{printf "%.2f" .Cardmarket.Prices.AverageSellPrice}}</div>
+            {{if .Cardmarket.Prices.TrendPrice}}
+            <div><strong>Trend:</strong> €{{printf "%.2f" .Cardmarket.Prices.TrendPrice}}</div>
+            {{end}}
+            {{if .Cardmarket.URL}}
+            <a href="{{.Cardmarket.URL}}" target="_blank" class="external-link">View on Cardmarket →</a>
+            {{end}}
+        </div>
+        {{end}}
+    </div>
+</div>

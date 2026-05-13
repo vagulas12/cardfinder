@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Search: {{.Query}}</title>
+    <title>{{.Name}} - Pokemon Card Finder</title>
     <link rel="stylesheet" href="/static/style.css">
     <script src="https://unpkg.com/htmx.org@2.0.4"></script>
 </head>
 <body>
     <h1>Pokemon Card Finder</h1>
-    <a href="/" class="back-link">← Back to search</a>
-    <h2 style="text-align:center; margin-bottom:1rem;">Results for "{{.Query}}"</h2>
     
     <div id="results">
-        {{template "search_results.html" .}}
+        {{template "card_detail.html" .}}
     </div>
 </body>
 </html>

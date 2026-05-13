@@ -1,9 +1,23 @@
 {{if .Cards}}
-    <ul>
+    <div class="card-grid">
     {{range .Cards}}
-        <li>{{.Name}} ({{.ID}})</li>
+        <div class="card" 
+             hx-get="/card/{{.ID}}" 
+             hx-target="#results" 
+             hx-swap="innerHTML"
+             hx-push-url="true">
+            <img src="{{.Images.Small}}" alt="{{.Name}}">
+            <div class="card-info">
+                <div class="card-name">{{.Name}}</div>
+                <div class="card-meta">
+                    {{.Set.Name}}
+                    {{if .Rarity}} • {{.Rarity}}{{end}}
+                    {{if .HP}} • HP {{.HP}}{{end}}
+                </div>
+            </div>
+        </div>
     {{end}}
-    </ul>
+    </div>
 {{else}}
-    <p>No cards found.</p>
+    <p class="no-results">No cards found.</p>
 {{end}}
